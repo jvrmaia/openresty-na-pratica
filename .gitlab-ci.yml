@@ -1,0 +1,8 @@
+image: hadolint/hadolint
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+pages:
+  script:
+  - docker run --rm -i hadolint/hadolint < Dockerfile
