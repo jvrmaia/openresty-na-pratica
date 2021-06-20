@@ -1,8 +1,6 @@
-image: hadolint/hadolint
+stages:
+  - lint
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-
-pages:
-  script:
-  - docker run --rm -i hadolint/hadolint < Dockerfile
+docker-lint:
+  stage: lint
+  script: docker run --rm -i hadolint/hadolint < Dockerfile
